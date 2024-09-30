@@ -20,7 +20,9 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            transform.LookAt(other.transform);
             EnemyIA.SetDestination(other.transform.position);
+            
         }
     }
 }
