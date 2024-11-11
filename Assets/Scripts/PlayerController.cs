@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [Range(0, 10f)]
     [Space]
     [SerializeField] private float Velocidade;
-    [SerializeField] private float Sensibilidade;
+    private float Sensibilidade;
     [SerializeField] private float JumpForce;
 
 
@@ -45,5 +45,10 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(0f, PlayerMouseInput.x * Sensibilidade, 0f);
         PlayerCamera.transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
+    }
+
+    public void SetSensibilidade(float sensibilidade) 
+    {
+        Sensibilidade = sensibilidade;
     }
 }
